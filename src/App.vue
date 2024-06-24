@@ -1,30 +1,134 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+      <div class="header">
+          <div class="box">
+              <h1>
+                  <!-- <img src="../assets/logo.png"> -->
+                  <span>KnowledgeJobQ</span>
+              </h1>
+              <nav>
+                  <router-link active-class="active" to="/">首页</router-link>
+                  <router-link active-class="active" to="/community">社区</router-link>
+                  <router-link active-class="active" to="/">信息</router-link>
+                  <router-link active-class="active" to="/">创办企业</router-link>
+              </nav>
+          </div>
+          <div class="box">
+              <input class="text" type="text" placeholder="请输入关键词" name="search">
+              <input class="button" type="button" value="搜索">
+              <!-- <img src="../assets/portrait.png"> -->
+              <nav>
+                  <a >消息</a>
+                  <a>发布</a>
+              </nav>
+          </div>
+      </div>
+      <div class="contents">
+          <div class="content">
+              <router-view></router-view>
+          </div>
+      </div>
+
+  </div>
 </template>
 
 <style>
+   .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        background-color:#7BBDB6;
+        color: #ffffff;
+
+        /*吸顶效果*/
+       /* position: sticky;
+        position: -webkit-sticky;    !*兼容 -webkit 内核的浏览器*!
+        top: 0px;                    !*必须设一个值，否则不生效*!*/
+
+    }
+    .box{
+        display: flex;
+        align-items: center;
+    }
+    h1{
+        display: flex;
+        align-items: center;
+        font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+        padding: 0px 20px;
+    }
+    img{
+        width: 40px;
+        height: 40px;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        margin: 0px 40px;
+        font:16px Arial, Helvetica, sans-serif;
+    }
+    nav a{
+        padding: 0 15px;
+        width: 70px;
+        text-decoration:none;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: normal;
+        opacity: 0.9;
+    }
+
+    nav a:hover {
+        opacity: 1;
+    }
+
+    .active {
+        color: #608bd2;
+        pointer-events: none;
+        opacity: 1;
+    }
+
+    /*搜索框*/
+
+    .text{
+        height: 22px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        padding: 3px 16px;
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+    }
+    .text:focus{
+        outline: none;
+        border-color: rgba(82, 168, 236, 0.8);
+        box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    }
+    .button{
+        width: 60px;
+        height: 30px;
+        font-size: 14px;
+        margin-right: 35px;
+        border: 1px solid #608bd2;
+        background-color: #608bd2;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .contents{
+        display: flex;
+        justify-content: center;
+    }
+    .content{
+        display: flex;
+        width: 1400px;
+        height: 1400px;
+        /*background-color: #f0f2f3;*/
+    }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
