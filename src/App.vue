@@ -27,4 +27,11 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+:root {  
+  --dark-green: #11616b;  
+  --light-green: #7bbdb6;  
+  --lightest:#ebf4f8;
+  --light-orange:#fed9cd;
+  --orange:#dc8b70;
+}
 </style>
